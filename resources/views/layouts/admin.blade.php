@@ -103,6 +103,12 @@
                                     <a href="{{ route('admin.projects.index') }}" class="list-group-item list-group-item-action py-2 ripple bg-danger fw-bold text-white">
                                     <i class="fas fa-chart-area fa-fw me-3"></i><span>Project</span>
                                     </a>
+                                    <a href="{{ route('admin.types.index') }}" class="list-group-item list-group-item-action py-2 ripple bg-danger fw-bold text-white">
+                                        <i class="fas fa-chart-area fa-fw me-3"></i><span>Types</span>
+                                    </a>
+                                    <a href="{{ route('admin.technologies.index') }}" class="list-group-item list-group-item-action py-2 ripple bg-danger fw-bold text-white">
+                                        <i class="fas fa-chart-area fa-fw me-3"></i><span>Technologies</span>
+                                    </a>
                                     <a href="#" class="list-group-item list-group-item-action py-2 ripple bg-danger fw-bold text-white"
                                     ><i class="fas fa-lock fa-fw me-3"></i><span>User</span></a>
                                 </div>
