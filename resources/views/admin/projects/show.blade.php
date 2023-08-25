@@ -13,6 +13,16 @@
                 {{ $project->type->name }}
             </div>
             <div class="col-12">
+                <strong>Tecnologie:</strong>
+                @if($project->technologies)
+                    @foreach($project->technologies as $technology)
+                        <a href="" class="btn btn-sm btn-primary">{{ $technology->name }}</a>
+                    @endforeach
+                @else
+                    Non sono presenti tecnologie associate al progetto
+                @endif
+            </div>
+            <div class="col-12">
                 <p>
                     {{ $project->content }}
                 </p>
