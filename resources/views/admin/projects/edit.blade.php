@@ -38,6 +38,24 @@
                                 <div class="text-danger">{{ $messages }}</div>
                             @enderror
                         </div>
+                        <div class="form-group mt-4">
+                            <div>Seleziona la tecnologia</div>
+                            @foreach($technologies as $technology)
+                                <div class="form-check @error('technology') is-invalid @enderror">
+                                    @if($errors->any())
+                                        <input type="checkbox" name="technologies[]" value="{{ $technology->id }}" class="form-check-input" {{ in_array($technology->id, old('technologies', [])) ? 'checked' : ''}}>
+                                    @else
+                                        <input type="checkbox" name="technologies[]" value="{{ $technology->id }}" class="form-check-input" {{ $project->technologies->contains($technology) ? 'checked':'' }}>
+                                    @endif
+                                    <label class="form-check-label">
+                                        {{ $technology->name }}
+                                    </label>
+                                </div>
+                            @endforeach
+                            @error('technologies')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
                         <label class="contol-lable">Contenuto</label>
                         <textarea class="form-control" name="content" id="content" placeholder="Contenuto">{{ old('content') ?? $project->content }}</textarea>
                     </div>
